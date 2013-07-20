@@ -21,20 +21,27 @@ NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'bling/vim-airline'
+
 " vim-scripts repos
 NeoBundle 'L9'
-NeoBundle 'FuzzyFinder'
+"NeoBundle 'FuzzyFinder'
 NeoBundle 'rails.vim'
 NeoBundle 'CSApprox'
+
 " Non github repos
-NeoBundle 'git://git.wincent.com/command-t.git'
+"NeoBundle 'git://git.wincent.com/command-t.git'
+
 " gist repos
 " NeoBundle 'gist:Shougo/656148', {
 " \ 'name': 'everything.vim',
 " \ 'script_type': 'plugin'}
 " Non git repos
 NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
-NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
+"NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 
 " ...
 
