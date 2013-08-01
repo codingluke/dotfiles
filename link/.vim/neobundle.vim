@@ -25,6 +25,8 @@ NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'chrisbra/Recover.vim'
+NeoBundle 'ivalkeen/vim-ctrlp-tjump'
 
 " vim-scripts repos
 NeoBundle 'L9'

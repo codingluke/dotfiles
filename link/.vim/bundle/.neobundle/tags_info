@@ -1,5 +1,6 @@
 CSApprox
 L9
+Recover.vim
 ctrlp.vim
 mpvim
 neobundle.vim
@@ -9,6 +10,7 @@ rails.vim
 sparkup
 supertab
 vim-airline
+vim-ctrlp-tjump
 vim-easymotion
 vim-eunuch
 vim-fugitive

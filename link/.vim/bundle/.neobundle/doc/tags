@@ -150,6 +150,7 @@ EasyMotion_do_shade	easymotion.txt	/*EasyMotion_do_shade*
 EasyMotion_grouping	easymotion.txt	/*EasyMotion_grouping*
 EasyMotion_keys	easymotion.txt	/*EasyMotion_keys*
 EasyMotion_leader_key	easymotion.txt	/*EasyMotion_leader_key*
+FinishRecovery	recoverPlugin.txt	/*FinishRecovery*
 NERDComAbout	NERD_commenter.txt	/*NERDComAbout*
 NERDComAlignedComment	NERD_commenter.txt	/*NERDComAlignedComment*
 NERDComAltDelim	NERD_commenter.txt	/*NERDComAltDelim*
@@ -244,6 +245,10 @@ NERDTreeOptions	NERD_tree.txt	/*NERDTreeOptions*
 NERDTreeRender()	NERD_tree.txt	/*NERDTreeRender()*
 NERD_commenter.txt	NERD_commenter.txt	/*NERD_commenter.txt*
 NERD_tree.txt	NERD_tree.txt	/*NERD_tree.txt*
+RecovePlugin-config	recoverPlugin.txt	/*RecovePlugin-config*
+RecoverPlugin-misc	recoverPlugin.txt	/*RecoverPlugin-misc*
+RecoverPluginFinish	recoverPlugin.txt	/*RecoverPluginFinish*
+RecoverPluginHelp	recoverPlugin.txt	/*RecoverPluginHelp*
 ResetCtrlP	ctrlp.txt	/*ResetCtrlP*
 airline	airline.txt	/*airline*
 airline-commands	airline.txt	/*airline-commands*
@@ -674,6 +679,11 @@ rails-syntax-yaml	rails.txt	/*rails-syntax-yaml*
 rails-type-navigation	rails.txt	/*rails-type-navigation*
 rails-vim-integration	rails.txt	/*rails-vim-integration*
 rails.txt	rails.txt	/*rails.txt*
+recover-feedback	recoverPlugin.txt	/*recover-feedback*
+recover-history	recoverPlugin.txt	/*recover-history*
+recover-manual	recoverPlugin.txt	/*recover-manual*
+recover.vim	recoverPlugin.txt	/*recover.vim*
+recoverPlugin	recoverPlugin.txt	/*recoverPlugin*
 ruby-[M	vim-ruby.txt	/*ruby-[M*
 ruby-[[	vim-ruby.txt	/*ruby-[[*
 ruby-[]	vim-ruby.txt	/*ruby-[]*
