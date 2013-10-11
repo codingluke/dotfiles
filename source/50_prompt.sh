@@ -1,3 +1,6 @@
+# I just ignore this awsome prompt from cowboy, but don't want to delete it
+return 1
+
 # My awesome bash prompt
 #
 # Copyright (c) 2012 "Cowboy" Ben Alman
