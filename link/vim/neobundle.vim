@@ -32,7 +32,7 @@ NeoBundle 'ivalkeen/vim-ctrlp-tjump'
 NeoBundle 'L9'
 "NeoBundle 'FuzzyFinder'
 NeoBundle 'rails.vim'
-NeoBundle 'CSApprox'
+"NeoBundle 'CSApprox'
 
 " Non github repos
 "NeoBundle 'git://git.wincent.com/command-t.git'
