@@ -27,12 +27,12 @@ NeoBundle 'ervandew/supertab'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'ivalkeen/vim-ctrlp-tjump'
+NeoBundle 'dag/vim-fish'
+NeoBundle 'christoomey/vim-tmux-navigator'
 
 " vim-scripts repos
 NeoBundle 'L9'
-"NeoBundle 'FuzzyFinder'
 NeoBundle 'rails.vim'
-"NeoBundle 'CSApprox'
 
 " Non github repos
 "NeoBundle 'git://git.wincent.com/command-t.git'

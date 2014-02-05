@@ -1,8 +1,6 @@
-CSApprox
 L9
 Recover.vim
 ctrlp.vim
-mpvim
 neobundle.vim
 nerdcommenter
 nerdtree
@@ -13,6 +11,8 @@ vim-airline
 vim-ctrlp-tjump
 vim-easymotion
 vim-eunuch
+vim-fish
 vim-fugitive
 vim-ruby
+vim-tmux-navigator
 vimproc

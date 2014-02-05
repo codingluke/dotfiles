@@ -56,7 +56,7 @@ let mapleader=","
 "color
 set t_Co=256
 set background=dark
-colorscheme grb256-approx
+colorscheme grb256
 
 map <Leader>t :NERDTreeToggle<CR>
 
