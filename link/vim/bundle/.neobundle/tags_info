@@ -1,12 +1,13 @@
 L9
 Recover.vim
+YouCompleteMe
 ctrlp.vim
 neobundle.vim
 nerdcommenter
 nerdtree
 rails.vim
+rust.vim
 sparkup
-supertab
 vim-airline
 vim-ctrlp-tjump
 vim-easymotion

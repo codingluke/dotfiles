@@ -23,12 +23,15 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'ervandew/supertab'
+"NeoBundle 'ervandew/supertab'
+NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'ivalkeen/vim-ctrlp-tjump'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'wting/rust.vim'
+
 
 " vim-scripts repos
 NeoBundle 'L9'
