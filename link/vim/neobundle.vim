@@ -43,10 +43,7 @@ NeoBundle 'aklt/vim-line_length'
 NeoBundle '29decibel/codeschool-vim-theme'
 NeoBundle 'vim-scripts/summerfruit256.vim'
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'vim-scripts/BusyBee'
-NeoBundle 'vim-scripts/darktango.vim'
-NeoBundle 'nanotech/jellybeans.vim'
-
+NeoBundle 'jonathanfilip/vim-lucius'
 
 " vim-scripts repos
 NeoBundle 'L9'

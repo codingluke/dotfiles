@@ -1,4 +1,3 @@
-BusyBee
 DoxygenToolkit.vim
 L9
 Recover.vim
@@ -6,8 +5,6 @@ YouCompleteMe
 ag.vim
 codeschool-vim-theme
 ctrlp.vim
-darktango.vim
-jellybeans.vim
 neobundle.vim
 nerdcommenter
 nerdtree
@@ -17,7 +14,6 @@ sparkup
 summerfruit256.vim
 vim-airline
 vim-coffee-script
-vim-colors-solarized
 vim-ctrlp-tjump
 vim-easymotion
 vim-eunuch
@@ -25,6 +21,7 @@ vim-fish
 vim-fugitive
 vim-hybrid
 vim-line_length
+vim-lucius
 vim-markdown
 vim-move
 vim-ruby
