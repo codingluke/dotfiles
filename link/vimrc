@@ -7,9 +7,9 @@ set hidden
 " remember more commands and search history
 set history=10000
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set autoindent
 set laststatus=2
 set showmatch
@@ -23,6 +23,7 @@ set cmdheight=2
 set switchbuf=useopen
 set showtabline=2
 set winwidth=79
+set autoread
 " This makes RVM work inside Vim. I have no idea why.
 set shell=bash
 " Prevent Vim from clobbering the scrollback buffer. See
@@ -39,7 +40,7 @@ set backspace=indent,eol,start
 " display incomplete commands
 set showcmd
 " Enable highlighting for syntax
-syntax on
+syntax enable
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
@@ -53,12 +54,25 @@ let mapleader=","
 " Fix slow O inserts
 :set timeout timeoutlen=1000 ttimeoutlen=100
 
+" markdown
+let g:vim_markdown_folding_disabled=1
+
+" Doxigen
+let g:DoxygenToolkit_briefTag_pre="" 
+
 "color
 set t_Co=256
 set background=dark
-colorscheme grb256
+let g:lucius_contrast_bg='high'
+"let g:lucius_contrast='high'
+colorscheme lucius 
 
 map <Leader>t :NERDTreeToggle<CR>
+
+" wordwrap
+set wrap
+set linebreak
+set nolist  " list disables linebreak
 
 " Mapps jump between splitscreens
 nnoremap <c-j> <c-w>j
@@ -74,10 +88,13 @@ imap <c-c> <esc>
 " Mapps copy paste
 map <leader>y "*y
 map <leader>p "*p
-
+ 
 " Mapps narrow/ wide splitscreen
 map <Leader>j <C-w><  
 map <Leader>k <C-w>>  
+
+" hamlc syntax to haml
+au BufRead,BufNewFile *.hamlc set ft=haml
 
 
 " FUNCTIONS
@@ -126,6 +143,15 @@ function! RenameFile()
     endif
 endfunction
 map <leader>n :call RenameFile()<cr>
+
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 
 " NeoBundler for all the plugins
