@@ -40,7 +40,6 @@ NeoBundle 'vim-scripts/DoxygenToolkit.vim'
 NeoBundle 'aklt/vim-line_length'
 
 " Colorschemes
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle '29decibel/codeschool-vim-theme'
 NeoBundle 'vim-scripts/summerfruit256.vim'
 NeoBundle 'w0ng/vim-hybrid'

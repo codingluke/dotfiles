@@ -13,8 +13,11 @@ a buffer and the underlying file at the same time.  Load a `find` or a
 Since this plugin can delete files, you should be aware that this plugin can
 delete files.  Fat fingers beware.
 
-Bonus feature: if you create a new file that starts with #!, `chmod +x` will
-automatically be invoked on it when you first write the file.
+If you create a new file that starts with #!, `chmod +x` will automatically be
+invoked on it when you first write the file.
+
+File type detection for files edited with `sudoedit` and `sudo -e` happens
+based on the original file name.
 
 COMMANDS                                        *eunuch-commands*
 
@@ -35,6 +38,15 @@ COMMANDS                                        *eunuch-commands*
 
                                                 *eunuch-:Chmod*
 :Chmod {mode}           Change the permissions of the current file.
+
+                                                *eunuch-:Mkdir*
+:Mkdir {dir}            Create directory {dir} with |mkdir()|.
+
+:Mkdir! {dir}           Create directory {dir} with |mkdir()| passing the "p"
+                        argument.  This is like `mkdir -p`.
+
+:Mkdir[!]               With no argument, create the containing directory for
+                        the current file.
 
                                                 *eunuch-:Find*
 :Find[!] {args}         Run `find` and load the results into the quickfix

@@ -141,6 +141,7 @@
 :NeoBundleCheck	neobundle.txt	/*:NeoBundleCheck*
 :NeoBundleCheckUpdate	neobundle.txt	/*:NeoBundleCheckUpdate*
 :NeoBundleClean	neobundle.txt	/*:NeoBundleClean*
+:NeoBundleClearCache	neobundle.txt	/*:NeoBundleClearCache*
 :NeoBundleCount	neobundle.txt	/*:NeoBundleCount*
 :NeoBundleDirectInstall	neobundle.txt	/*:NeoBundleDirectInstall*
 :NeoBundleDisable	neobundle.txt	/*:NeoBundleDisable*
@@ -152,10 +153,13 @@
 :NeoBundleInstall!	neobundle.txt	/*:NeoBundleInstall!*
 :NeoBundleLazy	neobundle.txt	/*:NeoBundleLazy*
 :NeoBundleList	neobundle.txt	/*:NeoBundleList*
+:NeoBundleLoadCache	neobundle.txt	/*:NeoBundleLoadCache*
 :NeoBundleLocal	neobundle.txt	/*:NeoBundleLocal*
 :NeoBundleLog	neobundle.txt	/*:NeoBundleLog*
 :NeoBundleRecipe	neobundle.txt	/*:NeoBundleRecipe*
 :NeoBundleReinstall	neobundle.txt	/*:NeoBundleReinstall*
+:NeoBundleRollback	neobundle.txt	/*:NeoBundleRollback*
+:NeoBundleSaveCache	neobundle.txt	/*:NeoBundleSaveCache*
 :NeoBundleSource	neobundle.txt	/*:NeoBundleSource*
 :NeoBundleUpdate	neobundle.txt	/*:NeoBundleUpdate*
 :NeoBundleUpdate!	neobundle.txt	/*:NeoBundleUpdate!*
@@ -269,9 +273,10 @@ EasyMotion_use_migemo	easymotion.txt	/*EasyMotion_use_migemo*
 EasyMotion_use_upper	easymotion.txt	/*EasyMotion_use_upper*
 FinishRecovery	recoverPlugin.txt	/*FinishRecovery*
 GLIBC_2.XX-not-found()	youcompleteme.txt	/*GLIBC_2.XX-not-found()*
+GoTo	youcompleteme.txt	/*GoTo*
 GoToDeclaration	youcompleteme.txt	/*GoToDeclaration*
 GoToDefinition	youcompleteme.txt	/*GoToDefinition*
-GoToDefinitionElseDeclaration	youcompleteme.txt	/*GoToDefinitionElseDeclaration*
+GoToImprecise	youcompleteme.txt	/*GoToImprecise*
 LONG_BIT-definition-appears-wrong-for-platform	youcompleteme.txt	/*LONG_BIT-definition-appears-wrong-for-platform*
 NERDComAbout	NERD_commenter.txt	/*NERDComAbout*
 NERDComAlignedComment	NERD_commenter.txt	/*NERDComAlignedComment*
@@ -404,6 +409,7 @@ airline-hunks	airline.txt	/*airline-hunks*
 airline-intro	airline.txt	/*airline-intro*
 airline-license	airline.txt	/*airline-license*
 airline-name	airline.txt	/*airline-name*
+airline-nrrwrgn	airline.txt	/*airline-nrrwrgn*
 airline-parts	airline.txt	/*airline-parts*
 airline-pipeline	airline.txt	/*airline-pipeline*
 airline-pipeline-return-codes	airline.txt	/*airline-pipeline-return-codes*
@@ -469,6 +475,7 @@ eunuch	eunuch.txt	/*eunuch*
 eunuch-:Chmod	eunuch.txt	/*eunuch-:Chmod*
 eunuch-:Find	eunuch.txt	/*eunuch-:Find*
 eunuch-:Locate	eunuch.txt	/*eunuch-:Locate*
+eunuch-:Mkdir	eunuch.txt	/*eunuch-:Mkdir*
 eunuch-:Move	eunuch.txt	/*eunuch-:Move*
 eunuch-:Remove	eunuch.txt	/*eunuch-:Remove*
 eunuch-:Rename	eunuch.txt	/*eunuch-:Rename*
@@ -678,13 +685,17 @@ move-mappings	move.txt	/*move-mappings*
 move-usage	move.txt	/*move-usage*
 move.txt	move.txt	/*move.txt*
 neobundle	neobundle.txt	/*neobundle*
+neobundle#begin()	neobundle.txt	/*neobundle#begin()*
 neobundle#bundle()	neobundle.txt	/*neobundle#bundle()*
 neobundle#call_hook()	neobundle.txt	/*neobundle#call_hook()*
 neobundle#config()	neobundle.txt	/*neobundle#config()*
+neobundle#end()	neobundle.txt	/*neobundle#end()*
 neobundle#exists_not_installed_bundles()	neobundle.txt	/*neobundle#exists_not_installed_bundles()*
 neobundle#get()	neobundle.txt	/*neobundle#get()*
 neobundle#get_hooks()	neobundle.txt	/*neobundle#get_hooks()*
 neobundle#get_not_installed_bundle_names()	neobundle.txt	/*neobundle#get_not_installed_bundle_names()*
+neobundle#has_cache()	neobundle.txt	/*neobundle#has_cache()*
+neobundle#hooks	neobundle.txt	/*neobundle#hooks*
 neobundle#is_installed()	neobundle.txt	/*neobundle#is_installed()*
 neobundle#is_sourced()	neobundle.txt	/*neobundle#is_sourced()*
 neobundle#local()	neobundle.txt	/*neobundle#local()*
@@ -745,8 +756,6 @@ neobundle-usage	neobundle.txt	/*neobundle-usage*
 neobundle-variables	neobundle.txt	/*neobundle-variables*
 neobundle.txt	neobundle.txt	/*neobundle.txt*
 rails	rails.txt	/*rails*
-rails-'cfu'	rails.txt	/*rails-'cfu'*
-rails-'completefunc'	rails.txt	/*rails-'completefunc'*
 rails-'et'	rails.txt	/*rails-'et'*
 rails-'expandtab'	rails.txt	/*rails-'expandtab'*
 rails-'filetype'	rails.txt	/*rails-'filetype'*
@@ -995,6 +1004,7 @@ vimproc.txt	vimproc.txt	/*vimproc.txt*
 without	solarized.txt	/*without*
 yS	surround.txt	/*yS*
 ySS	surround.txt	/*ySS*
+youcompleteme	youcompleteme.txt	/*youcompleteme*
 youcompleteme-c-family-semantic-completion-engine-usage	youcompleteme.txt	/*youcompleteme-c-family-semantic-completion-engine-usage*
 youcompleteme-c-semantic-completion	youcompleteme.txt	/*youcompleteme-c-semantic-completion*
 youcompleteme-client-server-architecture	youcompleteme.txt	/*youcompleteme-client-server-architecture*
@@ -1037,6 +1047,5 @@ youcompleteme-ycm-auto-inserts-completion-strings-i-dont-want	youcompleteme.txt	
 youcompleteme-ycm-conflicts-with-ultisnips-tab-key-usage	youcompleteme.txt	/*youcompleteme-ycm-conflicts-with-ultisnips-tab-key-usage*
 youcompleteme-ycm-does-not-read-identifiers-from-my-tags-files	youcompleteme.txt	/*youcompleteme-ycm-does-not-read-identifiers-from-my-tags-files*
 youcompleteme-ycmcompleter-subcommands	youcompleteme.txt	/*youcompleteme-ycmcompleter-subcommands*
-youcompleteme.txt	youcompleteme.txt	/*youcompleteme.txt*
 ys	surround.txt	/*ys*
 yss	surround.txt	/*yss*
