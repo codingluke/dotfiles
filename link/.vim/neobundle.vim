@@ -16,12 +16,12 @@ NeoBundle 'Shougo/vimproc'
 " Note: You don't set neobundle setting in .gvimrc!
 " Original repos on github
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"NeoBundle 'Lokaltog/vim-easymotion'
+"NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-eunuch'
+"NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'bling/vim-airline'
@@ -29,25 +29,34 @@ NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'ivalkeen/vim-ctrlp-tjump'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'wting/rust.vim'
+"NeoBundle 'wting/rust.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'rking/ag.vim'
-NeoBundle 'matze/vim-move'
+"NeoBundle 'matze/vim-move'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'vim-scripts/DoxygenToolkit.vim'
-NeoBundle 'aklt/vim-line_length'
+NeoBundle 'octol/vim-cpp-enhanced-highlight'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'flazz/vim-colorschemes'
+"NeoBundle 'aklt/vim-line_length'
+NeoBundle 'vim-scripts/octave.vim'
+NeoBundle 'rkulla/pydiction'
+NeoBundle 'vim-scripts/closetag.vim'
+
 
 " Colorschemes
-NeoBundle '29decibel/codeschool-vim-theme'
-NeoBundle 'vim-scripts/summerfruit256.vim'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'jonathanfilip/vim-lucius'
+"NeoBundle '29decibel/codeschool-vim-theme'
+"NeoBundle 'vim-scripts/summerfruit256.vim'
+"NeoBundle 'w0ng/vim-hybrid'
+"NeoBundle 'jonathanfilip/vim-lucius'
+"NeoBundle 'endel/vim-github-colorscheme'
 
 " vim-scripts repos
 NeoBundle 'L9'
 NeoBundle 'rails.vim'
+"NeoBundle 'octave.vim'
 
 " Non github repos
 "NeoBundle 'git://git.wincent.com/command-t.git'
