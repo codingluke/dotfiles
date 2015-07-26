@@ -1,18 +1,21 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nonumber
+set norelativenumber
 set nocompatible
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
 " remember more commands and search history
 set history=10000
 set expandtab
+set autoindent
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set autoindent
 set laststatus=2
 set showmatch
+set matchtime=2
 set incsearch
 set hlsearch
 " make searches case-sensitive only if they contain upper-case characters
@@ -52,52 +55,31 @@ set wildmode=longest,list
 set wildmenu
 let mapleader=","
 " Fix slow O inserts
-:set timeout timeoutlen=1000 ttimeoutlen=100
+set timeout timeoutlen=1000 ttimeoutlen=100
 
 " Mode j, k one line also when wrapped
 :nnoremap j gj
 :nnoremap k gk
 
-" Css colors
-let g:cssColorVimDoNotMessMyUpdatetime = 1
-
-" Python dictionary
-let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
-
-" YouCompleteMe
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_extra_conf_vim_data = ['v:version']
-
-" ctrlp
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_show_hidden = 1
-
-" Move
-let g:move_key_modifier = 'A'
-
-" Markdown
-let g:vim_markdown_folding_disabled=1
-
-" Doxigen
-let g:DoxygenToolkit_briefTag_pre=""
-
 " Colorscheme
 set t_Co=256
-let g:lucius_style='dark'
-let g:lucius_contrast='high'
-let g:lucius_contrast_bg='high'
-colorscheme lucius
-"colorscheme github
+let g:seoul256_background = 233
+let g:seoul256_light_background = 256
+color seoul256-light
 
-
-" NERDTree
-map <Leader>t :NERDTreeToggle<CR>
+"hi Normal ctermbg=none
 
 " Wordwrap
 set wrap
 set linebreak
-set nolist  " list disables linebreak
+" list disables linebreak
+set nolist  
+
+set mouse=a
+
+" Convert word to upper case
+imap <c-u> <esc>viwoU<esc>i
+nmap <c-u> viwoU<esc>
 
 " Mapps jump between splitscreens
 nnoremap <c-j> <c-w>j
@@ -109,8 +91,8 @@ nnoremap <c-l> <c-w>l
 imap <c-c> <esc>
 
 " Mapps copy paste
-map <leader>y "*y
-map <leader>p "*p
+map <leader>y "+y
+map <leader>p "+p
 
 " Mapps narrow/ wide splitscreen
 map <Leader>j <C-w><
@@ -119,19 +101,14 @@ map <Leader>k <C-w>>
 " hamlc syntax to haml
 au BufRead,BufNewFile *.hamlc set ft=haml
 
-" Reload in chrome
-map <leader>l :w\|:silent !reload-chrome<cr>
-
 " Move visual block
-vnoremap J :m '>+1<CR>
-vnoremap K :m '<-2<CR>
+vnoremap J :m '>+1<CR>gv
+vnoremap K :m '<-2<CR>gv
 
 " Move to the previous buffer
 nnoremap H :bprevious<CR>
-
 " Move to the next buffer
 nnoremap L :bnext<CR>
-
 " Replace H and L
 nnoremap zh H
 nnoremap zl L
@@ -139,25 +116,149 @@ nnoremap zl L
 nnoremap + H
 nnoremap _ L
 
-"set Y to duplicate line or selection
+" set Y to duplicate line or selection
 nmap Y yyp
 vmap Y y`>pgv " Duplicates then regains selection.
 
-if &term =~ "xterm\\|rxvt"
-  " use an orange cursor in insert mode
-  let &t_SI = "\<Esc>]12;orange\x7"
-  " use a red cursor otherwise
-  let &t_EI = "\<Esc>]12;grey\x7"
-  silent !echo -ne "\033]12;grey\007"
-  " reset cursor when vim exits
-  autocmd VimLeave * silent !echo -ne "\033]112\007"
-  " use \003]12;gray\007 for gnome-terminal
+" Edit vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" PLUGINS
+" =======
+"
+
+ " RDF Notation 3 Syntax
+"augroup filetypedetect
+    "au BufNewFile,BufRead *.n3  setfiletype n3
+    "au BufNewFile,BufRead *.ttl  setfiletype n3
+"augroup END 
+
+" Rainbowparanthesis
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']']]
+let g:rainbow#colors = {
+\   'dark': [
+\     ['yellow',  'orange1'     ],
+\     ['green',   'yellow1'     ],
+\     ['cyan',    'greenyellow' ],
+\     ['magenta', 'green1'      ],
+\     ['red',     'springgreen1'],
+\     ['yellow',  'cyan1'       ],
+\     ['green',   'slateblue1'  ],
+\     ['cyan',    'magenta1'    ],
+\     ['magenta', 'purple1'     ]
+\   ],
+\   'light': [
+\     ['darkyellow',  'orangered3'    ],
+\     ['darkgreen',   'orange2'       ],
+\     ['blue',        'yellow3'       ],
+\     ['darkmagenta', 'olivedrab4'    ],
+\     ['red',         'green4'        ],
+\     ['darkyellow',  'paleturquoise3'],
+\     ['darkgreen',   'deepskyblue4'  ],
+\     ['blue',        'darkslateblue' ],
+\     ['darkmagenta', 'darkviolet'    ]
+\   ]
+\ }
+autocmd VimEnter * RainbowParentheses
+
+" GOYO
+"autocmd User GoyoEnter Limelight
+"autocmd User GoyoLeave Limelight!
+nnoremap <Leader>G :Goyo<CR>
+
+" Incsearch
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+" SingleCompile!
+nmap <F9> :SCCompile<cr>
+nmap <F10> :SCCompileRun<cr>
+
+" Css colors
+let g:cssColorVimDoNotMessMyUpdatetime = 1
+
+" Python dictionary dictionary
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+
+" YouCompleteMe
+"let g:ycm_collect_identifiers_from_tags_files = 1
+"let g:ycm_seed_identifiers_with_syntax = 1
+"let g:ycm_extra_conf_vim_data = ['v:version']
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" NeoComplete
+let g:neocomplete#enable_at_startup = 1
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
 endif
 
+" ctrlp
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = '\v\.(exe|so|dll|o|pdf|jpg|png|tar|gz)$|\v[\/](build)$|\v[\/]\.(git|hg|svn)$'
+
+" Markdown
+let g:vim_markdown_folding_disabled=1
+
+" Doxigen
+let g:DoxygenToolkit_briefTag_pre=""
+
+" NERDTree
+let NERDTreeWinSize=31
+let NERDTreeMinimalUI=1
+"map <Leader>t :NERDTreeToggle<CR>
+nmap <silent> <Leader>t :call g:WorkaroundNERDTreeToggle()<CR>
+
+function! g:WorkaroundNERDTreeToggle()
+  try | :NERDTreeToggle | catch | :NERDTree | endtry
+endfunction
+
+" loads closetag.vim
 :au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 " FUNCTIONS
 " =========
+
+function! CompileTex()
+  let filename = expand('%')
+  if executable('pdflatex')
+    exec '!pdflatex ' . filename
+  endif
+endfunction
+nnoremap <leader>x :call CompileTex()<cr>
 
 " Clear the search buffer when hitting return
 function! MapCR()
@@ -168,15 +269,15 @@ nnoremap <leader><leader> <c-^>
 
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+"function! InsertTabWrapper()
+  "let col = col('.') - 1
+  "if !col || getline('.')[col - 1] !~ '\k'
+    "return "\<tab>"
+  "else
+    "return "\<c-p>"
+  "endif
+"endfunction
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " OPEN FILES IN DIRECTORY OF CURRENT FILE
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -203,6 +304,26 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
+" RUN QMLSCENE FOR CURRENT FILE
+function! Qmlscene()
+  if executable('qmlscene')
+    exec '!qmlscene ' . expand('%')
+  endif
+endfunction
+map <leader>q :call Qmlscene()<cr>
+
+" BUILD CURRENT QT PROJECT
+function! BuildQtPro()
+  exec '!cd ' . fnamemodify('*.pro', ':p:h')
+  if executable('qmake') && executable('make')
+    exec '!qmake'
+    exec '!make'
+  endif
+endfunction
+map <leader>w :call BuildQtPro()<cr>
+
+autocmd BufRead,BufNewFile *.arb setfiletype ruby
+
 " STRIP TRAILING WHITESPACES ON SAVE
 function! <SID>StripTrailingWhitespaces()
   let l = line(".")
@@ -210,7 +331,7 @@ function! <SID>StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfunction
-autocmd FileType c,cpp,java,php,ruby,python,javascript,markdown autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,php,ruby,python,javascript,markdown,html autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " NeoBundler for all the plugins
 runtime neobundle.vim
