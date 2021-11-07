@@ -55,15 +55,18 @@ ln -sf (pwd)/tmux.conf ~/.tmux.conf
 ## Brew
 
 ```bash
-brew install asdf
-brew install cheat
+brew install asdf     # https://asdf-vm.com/guide/introduction.html
+brew install cheat    # live cheat cheat
 brew install curl
-brew install direnv
+brew install direnv   # change directory environment vars on `cd`
 brew install git
-brew install ripgrep
-brew install starship
+brew install ripgrep  # very fast in-file search used by fzf for vim
+brew install starship # https://starship.rs/
 brew install tmux
-brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
+
+# FiraCode font for Nerds
+brew tap homebrew/cask-fonts \
+  && brew install --cask font-fira-code-nerd-font
 ```
 
 ## Curl
@@ -73,11 +76,11 @@ brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# blade (Liferay)
-curl -L https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/cli/installers/local | sh
-
 # fisher
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+# blade (Liferay)
+curl -L https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/cli/installers/local | sh
 
 ```
 
