@@ -7,7 +7,7 @@ end
 # proxy
 set PROXY_HOST (head -1 ~/.config/tokens/proxy-host)
 set PROXY_PORT (head -1 ~/.config/tokens/proxy-port)
-if true # Proxy or not
+if false # Proxy or not
   set -xg HTTP_PROXY "http://$PROXY_HOST:$PROXY_PORT"
   set -xg HTTPS_PROXY "http://$PROXY_HOST:$PROXY_PORT"
   set -xg http_proxy $HTTP_PROXY
