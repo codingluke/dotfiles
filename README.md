@@ -50,7 +50,34 @@ ln -sf (pwd)/config/fish/fish_plugins ~/.config/fish/fish_plugins
 
 # tmux
 ln -sf (pwd)/tmux.conf ~/.tmux.conf
+```
 
+## Brew
 
+```bash
+brew install asdf
+brew install cheat
+brew install curl
+brew install direnv
+brew install git
+brew install ripgrep
+brew install starship
+brew install tmux
+brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
+```
+
+## Curl
+
+```bash
+# vim-plug neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# blade (Liferay)
+curl -L https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/cli/installers/local | sh
+
+# fisher
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 ```
+
