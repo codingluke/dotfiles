@@ -53,7 +53,7 @@ Plug 'elorest/vim-slang'
 
 " features
 Plug 'vim-utils/vim-ruby-fold'
-Plug 'justinmk/vim-sneak'
+Plug 'ggandor/lightspeed.nvim'
 Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
@@ -754,9 +754,11 @@ nmap U     <Plug>(highlightedundo-Undo)
 nmap g-    <Plug>(highlightedundo-gminus)
 nmap g+    <Plug>(highlightedundo-gplus)
 
-" Sneak
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
+" Lightspeed_f
+map f <Plug>Lightspeed_f
+map F <Plug>Lightspeed_s
+map t <Plug>Lightspeed_t
+map T <Plug>Lightspeed_T
 
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
