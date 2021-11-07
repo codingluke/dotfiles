@@ -1,5 +1,11 @@
 # dotfiles
-lightwight dotfiles no magic included
+
+Lightwight dotfiles no magic included.
+
+No fancy `install.sh` destroying everything ;)
+Take 5 mins, run the commands manually, know what you did.
+
+**Happy hacking! :dancer:**
 
 ## Backup
 
