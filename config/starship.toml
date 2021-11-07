@@ -1,0 +1,16 @@
+# Don't print a new line at the start of the prompt
+add_newline = true
+# command_timeout=500
+
+[cmd_duration]
+disabled = true
+
+# [java]
+# disabled = true
+
+[nodejs]
+format = "via [🤖 $version](bold green) "
+style = "bold green"
+
+[package]
+disabled = true

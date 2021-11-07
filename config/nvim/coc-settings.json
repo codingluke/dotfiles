@@ -1,0 +1,10 @@
+{
+  "snippets.extends" : {
+    "jsp": ["html"],
+    "ftl": ["html"]
+  },
+  "solargraph.diagnostics": true,
+  "solargraph.useBundler": true,
+  "solargraph.bundlerPath": "~/.asdf/shims/bundle",
+  "solargraph.hover": true
+}
