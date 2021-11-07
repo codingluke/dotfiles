@@ -7,7 +7,57 @@ Take 5 mins, run the commands manually, know what you did.
 
 **Happy hacking! :dancer:**
 
-## Backup
+## Install
+
+### Brew
+
+```bash
+brew install asdf     # https://asdf-vm.com/guide/introduction.html
+brew install cheat    # live cheat cheat
+brew install curl
+brew install direnv   # change directory environment vars on `cd`
+brew install git
+brew install ripgrep  # very fast in-file search used by fzf for vim
+brew install starship # https://starship.rs/
+brew install tmux
+
+# FiraCode font for Nerds
+brew tap homebrew/cask-fonts \
+  && brew install --cask font-fira-code-nerd-font
+```
+
+### Curl
+
+```bash
+# vim-plug neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# fisher
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+# blade (Liferay)
+curl -L https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/cli/installers/local | sh
+```
+
+### Asdf
+
+```bash
+asdf plugin add neovim
+asdf install neovim stable
+asdf global neovim stable
+
+# https://github.com/halcyon/asdf-java
+# Checkout the section for OSX
+asdf plugin-add java https://github.com/halcyon/asdf-java.git
+
+# https://github.com/asdf-vm/asdf-nodejs
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+```
+
+## Configure
+
+### Backup
 
 ```bash
 # Make Backup Folder
@@ -32,7 +82,7 @@ cp ~/.config/fish/fish_plugins ~/.dotfiles-backup/config/fish
 cp ~/.tmux.conf ~/.dotfiles-backup
 ```
 
-## Symlink
+### Symlink
 
 **Run the scripts in this dotfiles repo directory!**
 
@@ -57,36 +107,3 @@ ln -sf (pwd)/config/fish/fish_plugins ~/.config/fish/fish_plugins
 # tmux
 ln -sf (pwd)/tmux.conf ~/.tmux.conf
 ```
-
-## Brew
-
-```bash
-brew install asdf     # https://asdf-vm.com/guide/introduction.html
-brew install cheat    # live cheat cheat
-brew install curl
-brew install direnv   # change directory environment vars on `cd`
-brew install git
-brew install ripgrep  # very fast in-file search used by fzf for vim
-brew install starship # https://starship.rs/
-brew install tmux
-
-# FiraCode font for Nerds
-brew tap homebrew/cask-fonts \
-  && brew install --cask font-fira-code-nerd-font
-```
-
-## Curl
-
-```bash
-# vim-plug neovim
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-# fisher
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-
-# blade (Liferay)
-curl -L https://raw.githubusercontent.com/liferay/liferay-blade-cli/master/cli/installers/local | sh
-
-```
-
