@@ -48,6 +48,9 @@ ln -sf (pwd)/config/starship.toml ~/.config/starship.toml
 ln -sf (pwd)/config/fish/config.fish ~/.config/fish/config.fish
 ln -sf (pwd)/config/fish/fish_plugins ~/.config/fish/fish_plugins
 
+# tmux
+ln -sf (pwd)/tmux.conf ~/.tmux.conf
+
 
 
 ```
