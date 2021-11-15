@@ -20,6 +20,7 @@ brew install git
 brew install ripgrep  # very fast in-file search used by fzf for vim
 brew install starship # https://starship.rs/
 brew install tmux
+brew install exa
 
 # FiraCode font for Nerds
 brew tap homebrew/cask-fonts \
@@ -66,7 +67,7 @@ mkdir -p ~/.dotfiles-backup/config/fish
 mkdir -p ~/.dotfiles-backup/config/nvim
 
 # Backup nvim
-cp ~/.config/nvim/init.vim ~/.dotfiles-backup/config/nvim/
+cp ~/.config/nvim/init*.vim ~/.dotfiles-backup/config/nvim/
 cp ~/.config/nvim/coc-settings.json ~/.dotfiles-backup/config/nvim/
 cp -r ~/.config/nvim/spell/ ~/.dotfiles-backup/config/nvim/spell/
 cp -r ~/.config/nvim/UltiSnips/ ~/.dotfiles-backup/config/nvim/UltiSnips/
@@ -89,6 +90,7 @@ cp ~/.tmux.conf ~/.dotfiles-backup
 ```bash
 # nvim
 ln -sf (pwd)/config/nvim/init.vim ~/.config/nvim/init.vim
+ln -sf (pwd)/config/nvim/init-vscode.vim ~/.config/nvim/init-vscode.vim
 ln -sf (pwd)/config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -sf (pwd)/config/nvim/spell/de.utf-8.add ~/.config/nvim/spell/de.utf-8.add
 ln -sf (pwd)/config/nvim/spell/de.utf-8.spl ~/.config/nvim/spell/de.utf-8.spl
