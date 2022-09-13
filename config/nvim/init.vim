@@ -16,7 +16,6 @@ Plug 'lingceng/z.vim'
 Plug 'airblade/vim-rooter'
 Plug 'chaquotay/ftl-vim-syntax'
 Plug 'andreshazard/vim-freemarker'
-Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'hdiniz/vim-gradle' 
 Plug 'gletort/vimConfigFiles' 
 Plug 'alvan/vim-closetag'
@@ -101,6 +100,7 @@ Plug 'junegunn/vim-after-object'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " colorschemes
+Plug 'catppuccin/nvim'
 Plug 'reedes/vim-colors-pencil'
 Plug 'reedes/vim-colors-pencil'
 Plug 'dim13/smyck.vim'
@@ -128,6 +128,8 @@ lua << EOF
   }
 EOF
 
+set synmaxcol=2048
+
 " use jj to escape insert mode.
 let g:better_escape_shortcut = "jk"
 
@@ -139,7 +141,7 @@ endif
 let g:embark_terminal_italics = 1
 set background=dark
 let g:dracula_colorterm=0 " disable dracula background, use term color
-colorscheme dracula
+colorscheme catppuccin
 
 set spelllang=de,en
 autocmd BufRead,BufNewFile *.md setlocal spell
@@ -354,15 +356,12 @@ nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 noremap <leader>vs :!code %<CR>
 
-nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
-vnoremap <silent> <Leader>ag y:Ag <C-R>0<CR>
-
 nnoremap <silent> <Leader>rg :Rg <C-R><C-W><CR>
 vnoremap <silent> <Leader>rg y:Rg <C-R>0<CR>
 
 nmap <space>b :GBrowse<CR>gg)
 nmap <space>g :Git<CR>gg)
-nmap <Leader>gb :Gblame<CR>
+nmap <Leader>gb :Git blame<CR>
 nnoremap <space>d :Gdiff<CR>
 imap <c-x><c-k> <plug>(fzf-complete-word-ag)
 imap <c-x><c-f> <plug>(fzf-complete-file-ag)
@@ -659,7 +658,9 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
 xmap <space>f  <Plug>(coc-format-selected)
-nmap <space>f  <Plug>(coc-format-selected)
+" nmap <space>f  <Plug>(coc-format-selected)
+nmap <space>f  <Plug>(coc-format)
+autocmd FileType js,javascript,json,typescript nnoremap <silent> <space>f :<C-u>CocCommand prettier.formatFile<cr>
 
 augroup mygroup
   autocmd!
@@ -710,8 +711,6 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-nnoremap <silent> <space>F  :!bundle exec standardrb --fix<cr>
-nnoremap <silent> <space>f  :<C-u>CocCommand prettier.formatFile<cr>
 " Mappings using CoCList:
   " Show all diagnostics.
 nnoremap <silent> <space>D  :<C-u>CocList diagnostics<cr>
