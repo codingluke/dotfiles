@@ -108,5 +108,10 @@ ln -sf (pwd)/config/fish/fish_plugins ~/.config/fish/fish_plugins
 
 # tmux
 ln -sf (pwd)/.tmux.conf ~/.tmux.conf
+
+# lvim
+ln -sf (pwd)/config/lvim/config.lua ~/.config/lvim/config.lua
+ln -s (pwd)/config/lvim/spell/ ~/.config/lvim/spell
+ln -sf (pwd)/config/lvim/lsp-settings/ ~/.config/lvim/lsp-settings
 ```
 

@@ -4,6 +4,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+eval (/opt/homebrew/bin/brew shellenv)
+
 # if not set -q TMUX
 #   set -g TMUX tmux new-session -d -s base
 #   eval $TMUX
@@ -34,32 +36,33 @@ set -xg DIRENV_LOG_FORMAT ''
 set -xg BAT_THEME Dracula
 
 # ruby
-set -xg RUBY_CONFIGURE_OPTS --with-openssl-dir=(brew --prefix openssl@1.1)
+# set -xg RUBY_CONFIGURE_OPTS --with-openssl-dir=(brew --prefix openssl@1.1)
 
 # lvim
 set -xg PATH $HOME/.local/bin $PATH
 
 # blade
 set -xg PATH $HOME/Library/PackageManager/bin $PATH
-set -xg PATH $HOME/Library/RedHat/openshift-client-mac $PATH
+# set -xg PATH $HOME/Library/RedHat/openshift-client-mac $PATH
 
 # nvim
 #set -xg EDITOR "~/.asdf/shims/nvim"
-set -xg EDITOR "/Users/taaholu6/.local/bin/lvim"
+set -xg EDITOR "~/.local/bin/lvim"
 set -xg FZF_DEFAULT_COMMAND 'rg --files --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 
 # yarn npm registry
 set -xg NPM_AUTH_TOKEN (head -1 ~/.config/tokens/yarn-npm-auth-token) 
 
 # docker from MINIKUBE
-set -gx DOCKER_TLS_VERIFY "1";
-set -gx DOCKER_HOST "tcp://192.168.64.11:2376";
-set -gx DOCKER_CERT_PATH "~/.minikube/certs";
-set -gx MINIKUBE_ACTIVE_DOCKERD "minikube";
+# set -gx DOCKER_TLS_VERIFY "1";
+# set -gx DOCKER_HOST "tcp://192.168.64.11:2376";
+# set -gx DOCKER_CERT_PATH "~/.minikube/certs";
+# set -gx MINIKUBE_ACTIVE_DOCKERD "minikube";
 
 # init misc shell hooks
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
+
 direnv hook fish | source
 starship init fish | source
-source /usr/local/opt/asdf/libexec/asdf.fish
 # source ~/.asdf/plugins/java/set-java-home.fish
 source $HOME/.config/fish/conf.d/abbr.fish
